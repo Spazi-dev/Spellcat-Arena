@@ -1,0 +1,27 @@
+
+	Here outlining all the coding parts
+
+Controls:
+-wasd motion, pathfinding, click to move towards cursor naively?	
+-click to cast spell in cursor direction
+
+Physics:
+-Knockback for player and enemies 
+-Upward knockback for monsters?
+
+Spellcasting:
+-Spell AoE indicators with cast on release / second click?
+-Casting a spell rotates to next spell, to guarantee that all varieties will be seen 
+-Starting to cast a spell puts the player into conjuring mode where they build up the spell (and can't move?)
+
+Spells:
+-Crystal spikes: sprouts advancing crystalline spikes from the ground which shatter
+-Volatile blob: creates a wobbly blob and tosses it forward, exploding into plasma arcs, flames and steam
+-Cursed swarm: Swarm of demon bats blazing with cursed fire that dive into enemies
+-Celestial lance: Tiny, fast, beaming projectile dives from the sky creating a shockwave
+
+Enemies:
+-Enemies randomly spawn for target practice, mostly passive AI
+-Passive as in wander randomly and move towards player based on "aggression" which increases 
+-Sewer slimes and flaming skeletons seem appropriate?
+-Slimes move in bounces, skeletons walk steadily towards chosen point
