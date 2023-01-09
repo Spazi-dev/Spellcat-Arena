@@ -8,6 +8,7 @@ using EasyCharacterMovement;
 public class SkellyAgent : AgentCharacter
 {
 	[SerializeField] Transform goalTarget;
+    [SerializeField] bool Pursuing;
     /* protected override void Start()
     {
 		base.Start();
@@ -17,7 +18,8 @@ public class SkellyAgent : AgentCharacter
 	protected override void Update()
     {
 		base.Update();
-        MoveToLocation(goalTarget.position);
+        if(Pursuing)
+            MoveToLocation(goalTarget.position);
     }
 	
 }
