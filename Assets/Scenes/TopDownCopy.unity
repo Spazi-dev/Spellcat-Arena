@@ -769,7 +769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e1c2b2e144e99846b930864f93b17da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _character: {fileID: 1233137630}
+  _character: {fileID: 1233137636}
 --- !u!4 &501923711 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 747429466607584438, guid: b3d95d3f1e54db74aa9f35b306238602,
@@ -6137,7 +6137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4b7b5e119f395f4e8d5add705235f67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _character: {fileID: 1233137630}
+  _character: {fileID: 0}
 --- !u!1001 &1062713270
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6686,80 +6686,15 @@ GameObject:
   - component: {fileID: 1233137633}
   - component: {fileID: 1233137632}
   - component: {fileID: 1233137631}
-  - component: {fileID: 1233137630}
+  - component: {fileID: 1233137636}
+  - component: {fileID: 1233137637}
   m_Layer: 0
   m_Name: SpellCatCharacter
   m_TagString: Player
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1233137630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1233137629}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02fdac9feddc18c42b092217d7ca977b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _inputActions: {fileID: -944628639613478452, guid: c4cfb4c340609f1479a7adf971878a3e,
-    type: 3}
-  _rotationMode: 1
-  _rotationRate: 540
-  _defaultMovementMode: 1
-  _maxWalkSpeed: 6
-  _minAnalogWalkSpeed: 0
-  _maxAcceleration: 20
-  _brakingDecelerationWalking: 20
-  _groundFriction: 8
-  _maxFallSpeed: 40
-  _brakingDecelerationFalling: 0
-  _fallingLateralFriction: 0.3
-  _airControl: 0.3
-  _maxFlySpeed: 10
-  _brakingDecelerationFlying: 0
-  _flyingFriction: 0.5
-  _canEverSwim: 1
-  _maxSwimSpeed: 3
-  _brakingDecelerationSwimming: 0
-  _swimmingFriction: 0.5
-  _buoyancy: 1
-  _useSeparateBrakingFriction: 0
-  _brakingFriction: 0
-  _canEverSprint: 1
-  _sprintSpeedModifier: 1.5
-  _sprintAccelerationModifier: 1
-  _canEverCrouch: 1
-  _unCrouchedHeight: 1.85
-  _crouchedHeight: 1
-  _crouchingSpeedModifier: 0.5
-  _canEverJump: 1
-  _jumpWhileCrouching: 0
-  _jumpMaxCount: 1
-  _jumpImpulse: 6
-  _jumpMaxHoldTime: 0.35
-  _jumpPreGroundedTime: 0.15
-  _jumpPostGroundedTime: 0.15
-  _gravity: {x: 0, y: -9.81, z: 0}
-  _gravityScale: 1
-  _useRootMotion: 0
-  _impartPlatformMovement: 0
-  _impartPlatformRotation: 0
-  _impartPlatformVelocity: 0
-  _enablePhysicsInteraction: 0
-  _applyPushForceToCharacters: 0
-  _applyStandingDownwardForce: 0
-  _mass: 1
-  _pushForceScale: 1
-  _standingDownwardForceScale: 1
-  _camera: {fileID: 477346233}
-  _autoBraking: 1
-  _brakingDistance: 2
-  _stoppingDistance: 1
 --- !u!114 &1233137631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6868,6 +6803,89 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1233137636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233137629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e85c8bbbe37fab0478d7245c3a0b7180, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputActions: {fileID: -944628639613478452, guid: 8a53138d1aee36549861a0b2db4f9d80,
+    type: 3}
+  _rotationMode: 1
+  _rotationRate: 540
+  _defaultMovementMode: 1
+  _maxWalkSpeed: 6
+  _minAnalogWalkSpeed: 0
+  _maxAcceleration: 20
+  _brakingDecelerationWalking: 20
+  _groundFriction: 8
+  _maxFallSpeed: 40
+  _brakingDecelerationFalling: 0
+  _fallingLateralFriction: 0.3
+  _airControl: 0.3
+  _maxFlySpeed: 10
+  _brakingDecelerationFlying: 0
+  _flyingFriction: 0.5
+  _canEverSwim: 1
+  _maxSwimSpeed: 3
+  _brakingDecelerationSwimming: 0
+  _swimmingFriction: 0.5
+  _buoyancy: 1
+  _useSeparateBrakingFriction: 0
+  _brakingFriction: 0
+  _canEverSprint: 1
+  _sprintSpeedModifier: 1.5
+  _sprintAccelerationModifier: 1
+  _canEverCrouch: 1
+  _unCrouchedHeight: 2
+  _crouchedHeight: 1.25
+  _crouchingSpeedModifier: 0.5
+  _canEverJump: 1
+  _jumpWhileCrouching: 0
+  _jumpMaxCount: 1
+  _jumpImpulse: 6
+  _jumpMaxHoldTime: 0.35
+  _jumpPreGroundedTime: 0.15
+  _jumpPostGroundedTime: 0.15
+  _gravity: {x: 0, y: -9.81, z: 0}
+  _gravityScale: 1
+  _useRootMotion: 0
+  _impartPlatformMovement: 0
+  _impartPlatformRotation: 0
+  _impartPlatformVelocity: 0
+  _enablePhysicsInteraction: 0
+  _applyPushForceToCharacters: 0
+  _applyStandingDownwardForce: 0
+  _mass: 1
+  _pushForceScale: 1
+  _standingDownwardForceScale: 1
+  _camera: {fileID: 477346233}
+  isCat: 1
+  magicCaster: {fileID: 1233137637}
+  _autoBraking: 1
+  _brakingDistance: 2
+  _stoppingDistance: 1
+--- !u!114 &1233137637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1233137629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63cd6d70bf575364f9ca6b0b06a85320, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellProjectile: {fileID: 7762482420472995075, guid: fd4c091040e7ce64c83e3533bbc13e85,
+    type: 3}
+  spellCastPoint: {fileID: 341816418}
 --- !u!4 &1263283949 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -9167737907302353139, guid: b3d95d3f1e54db74aa9f35b306238602,
@@ -7000,7 +7018,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1514376008
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7493,7 +7511,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1720913096
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9847,7 +9865,7 @@ GameObject:
   m_Layer: 0
   m_Name: SkellyCustomAgent
   m_TagString: Player
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -10838,3 +10856,77 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b7152958888f3248ad91e425326b2d5, type: 3}
+--- !u!1001 &2820923958605831693
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7762482420472995075, guid: fd4c091040e7ce64c83e3533bbc13e85,
+        type: 3}
+      propertyPath: m_Name
+      value: GenericSpellBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 7762482420472995075, guid: fd4c091040e7ce64c83e3533bbc13e85,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8959124005269344249, guid: fd4c091040e7ce64c83e3533bbc13e85,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8959124005269344249, guid: fd4c091040e7ce64c83e3533bbc13e85,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8959124005269344249, guid: fd4c091040e7ce64c83e3533bbc13e85,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8959124005269344249, guid: fd4c091040e7ce64c83e3533bbc13e85,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8959124005269344249, guid: fd4c091040e7ce64c83e3533bbc13e85,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8959124005269344249, guid: fd4c091040e7ce64c83e3533bbc13e85,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8959124005269344249, guid: fd4c091040e7ce64c83e3533bbc13e85,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8959124005269344249, guid: fd4c091040e7ce64c83e3533bbc13e85,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8959124005269344249, guid: fd4c091040e7ce64c83e3533bbc13e85,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8959124005269344249, guid: fd4c091040e7ce64c83e3533bbc13e85,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8959124005269344249, guid: fd4c091040e7ce64c83e3533bbc13e85,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fd4c091040e7ce64c83e3533bbc13e85, type: 3}
