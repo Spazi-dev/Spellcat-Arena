@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 296822312654699616}
   - component: {fileID: 2665455890343852793}
   - component: {fileID: 3858787504087525032}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GenericSpellBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

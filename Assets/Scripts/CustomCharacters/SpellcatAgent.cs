@@ -24,7 +24,11 @@ namespace EasyCharacterMovement
 		[Space(15f)]
 		[Tooltip("Magic 'weapon' component that casts the spells")]
 		[SerializeField]
-		private SpellcatMagicCaster magicCaster;
+		private SpellRay magicRay;
+		[Space(15f)]
+		[Tooltip("Transform that acts as a persistent cursor for orienting the character")]
+		[SerializeField]
+		private Transform aimPoint;
 
 		[Space(15f)]
 		[Tooltip("Should the agent brake automatically to avoid overshooting the destination point? \n" +
@@ -39,6 +43,12 @@ namespace EasyCharacterMovement
 		[Tooltip("Stop within this distance from the target position.")]
 		[SerializeField]
 		private float _stoppingDistance = 1.0f;
+
+		#endregion
+
+		#region CUSTOM PROPERTIES
+		public bool animFiring{get; private set;}
+		//public Vector3 aimPoint{get; private set;}
 
 		#endregion
 
@@ -417,15 +427,39 @@ namespace EasyCharacterMovement
 
 		protected override void HandleInput()
 		{
-			// Should handle input here ?
 
-			if (inputActions == null)
+			if (inputActions == null) //Got input?
 				return;
+
+			// Interaction input
 
 			if (_mouseButtonInteractPressed)
 			{
-				Interact();
+				Interact(true);
+
+				Vector2 mousePosition = GetMousePosition();
+
+				Ray ray = camera.ScreenPointToRay(mousePosition);
+
+				//LayerMask groundMask = characterMovement.collisionLayers;
+
+				//QueryTriggerInteraction triggerInteraction = characterMovement.triggerInteraction;
+
+				//if (Physics.Raycast(ray, out RaycastHit hitResult, Mathf.Infinity, groundMask, triggerInteraction))
+					//MoveToLocation(hitResult.point);
+
+				Plane floor = new Plane(Vector3.up, 0f); //This plane represents the floor for pointing and clicking to target spells
+				//float enter = 0.0f; //Initialize enter float (or don't)
+				if (floor.Raycast(ray, out float enter))
+				{
+					aimPoint.position = ray.GetPoint(enter);
+				}
 			}
+			else
+			{
+				Interact(false);
+			}
+
 			// Movement (click-to-move)
 
 			if (_mouseButtonMovePressed)
@@ -525,12 +559,32 @@ namespace EasyCharacterMovement
 		#region SPELLCAT
 
 		/// <summary>
+		/// Point to a persistent cursor usually when interacting.
+		/// </summary>
+
+		protected override void CustomRotationMode()
+        {
+            RotateTowards(aimPoint.position - transform.position);
+        }
+
+		/// <summary>
 		/// Do the magic shooty from Input.
 		/// </summary>
 
-		protected virtual void Interact()
+		protected virtual void Interact(bool isInteracting) //When mouse interact is pressed
 		{
-			magicCaster.ShootSpell();
+			magicRay.ShootSpell(isInteracting); //Interact could be many things but for now it's just spellcasting
+			animFiring = isInteracting;
+			if(isInteracting)
+			{
+				//aimPoint.position;
+				SetRotationMode(RotationMode.Custom);
+
+			}
+			else
+			{
+				SetRotationMode(RotationMode.OrientToMovement);
+			}
 		}
 
 		#endregion

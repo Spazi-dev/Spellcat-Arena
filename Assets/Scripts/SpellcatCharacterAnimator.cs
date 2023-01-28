@@ -9,10 +9,12 @@ namespace EasyCharacterMovement.Examples.Animation.UnityCharacterAnimatorExample
     public sealed class SpellcatCharacterAnimator : MonoBehaviour
     {
         private static readonly int Movement = Animator.StringToHash("Movement");
+        private static readonly int Firing = Animator.StringToHash("Firing");
         //private static readonly int Turn = Animator.StringToHash("Turn");
 
         [SerializeField]
-        private Character _character;
+        //private Character _character;
+        private SpellcatAgent _character;
 
         private bool _isCharacterNull;
 
@@ -39,6 +41,8 @@ namespace EasyCharacterMovement.Examples.Animation.UnityCharacterAnimatorExample
 
             animator.SetFloat(Movement, forwardAmount, 0.1f, deltaTime);
             animator.SetLayerWeight(1, animator.GetFloat(Movement)); //Set Run layer 
+
+            animator.SetBool(Firing, _character.animFiring);
 
             //animator.SetFloat(Turn, Mathf.Atan2(move.x, move.z), 0.1f, deltaTime);
 

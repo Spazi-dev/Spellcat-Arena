@@ -6,6 +6,7 @@ public class SpellcatMagicCaster : MonoBehaviour
 {
 	[SerializeField] GameObject spellProjectile; //Generic spell
 	[SerializeField] Transform spellCastPoint; 
+	[SerializeField] Transform spellCastTarget; 
 	/* void Start()
 	{
 		
@@ -15,6 +16,6 @@ public class SpellcatMagicCaster : MonoBehaviour
 	public void ShootSpell()
 	{
 		//Generic spellcast
-		Instantiate(spellProjectile, spellCastPoint.position, spellCastPoint.rotation);
+		Instantiate(spellProjectile, spellCastPoint.position, Quaternion.LookRotation(spellCastTarget.position - spellCastPoint.position));
 	}
 }
