@@ -50,7 +50,7 @@ public class SpellRay : MonoBehaviour
 		{
 			//Debug.Log($"Spell missed everything");
 			spellHitPoint = (transform.position + transform.forward * 50f); //Set hit point to arbitrary faraway forward position
-			spellHitNormal = (-transform.forward);
+			spellHitNormal = (-transform.forward); //pretend it hit a wall head-on
 
 			Debug.DrawLine(transform.position, spellHitPoint, Color.white, Time.fixedDeltaTime);
 		}
@@ -59,13 +59,14 @@ public class SpellRay : MonoBehaviour
 	}
 	void Update()
 	{
-		if(spellFiring && spellHitPointValid)
+		if(spellFiring && spellHitPointValid) //Draw effects
 		{
 			rayLineRenderer.enabled = true;
 			Vector3[] points = new Vector3[2];
 			points[0] = spellCastPoint.position;
 			points[1] = spellHitPoint;
 			rayLineRenderer.SetPositions(points);
+
 			spellImpact.transform.position = spellHitPoint;
 			spellImpact.transform.rotation = Quaternion.LookRotation(spellHitNormal, Vector3.up);
 			if(!spellImpactFX.isPlaying)
