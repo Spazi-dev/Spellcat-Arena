@@ -13,6 +13,7 @@ public class SpellRay : MonoBehaviour
 	[SerializeField] LayerMask spellHitRayLayers; 
 	Vector3 spellHitPoint; 
 	Vector3 spellHitNormal; 
+	GameObject spellHitGameobject; 
 	bool spellFiring;
 	bool spellHitPointValid;
 
@@ -43,6 +44,7 @@ public class SpellRay : MonoBehaviour
 			//print($"Found an object({hit.transform.gameObject}) - distance: {hit.distance}");
 			spellHitPoint = hit.point;
 			spellHitNormal = hit.normal;
+			spellHitGameobject = hit.collider.gameObject;
 
 			Debug.DrawLine(transform.position, spellHitPoint, Color.magenta, Time.fixedDeltaTime);
 		}
@@ -59,8 +61,10 @@ public class SpellRay : MonoBehaviour
 	}
 	void Update()
 	{
-		if(spellFiring && spellHitPointValid) //Draw effects
+		if(spellFiring && spellHitPointValid) //Draw effects, do also damage for now
 		{
+			DamageTarget(spellHitGameobject);
+
 			rayLineRenderer.enabled = true;
 			Vector3[] points = new Vector3[2];
 			points[0] = spellCastPoint.position;
@@ -78,4 +82,11 @@ public class SpellRay : MonoBehaviour
 			spellImpactFX.Stop();
 		}
 	}
+	void DamageTarget(GameObject targetToDamage)
+    {
+        if (targetToDamage.TryGetComponent(out IDamageable<float, Vector3, float> damagedTarget))
+        {
+            damagedTarget.DamageBurst(1f, Vector3.up);
+        }
+    }
 }

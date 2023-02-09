@@ -14,5 +14,5 @@ public interface IDamageable<Amount, Force, Duration> // add Element
 {
 	void DamageBurst(Amount _damageAmount, Force _forceDirection);
 	void DamageOverTime(Amount _damageAmount, Duration _damageDuration);
-	void DamageConstant(Amount _damageAmount);
+	//void DamageConstant(Amount _damageAmount);
 }
