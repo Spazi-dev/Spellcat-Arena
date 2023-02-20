@@ -42,7 +42,7 @@ namespace EasyCharacterMovement.Examples.Animation.UnityCharacterAnimatorExample
             animator.SetFloat(Movement, forwardAmount, 0.1f, deltaTime);
             animator.SetLayerWeight(1, animator.GetFloat(Movement)); //Set Run layer 
 
-            animator.SetBool(Firing, _character.animFiring);
+            animator.SetBool(Firing, _character.AnimFiring);
 
             //animator.SetFloat(Turn, Mathf.Atan2(move.x, move.z), 0.1f, deltaTime);
 

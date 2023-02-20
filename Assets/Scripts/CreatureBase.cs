@@ -5,29 +5,29 @@ using UnityEngine;
 public class CreatureBase : MonoBehaviour, IDamageable<float, Vector3, float>
 {
 	// CreatureBase is meant to handle creature life cycle from spawning to destruction as well as damage, healing and statuses. It could also handle target detection.
-	[SerializeField]
-	public float MaxHealth{get; private set;}
-	public float CurrentHealth{get; private set;}
+	[SerializeField] float MaxHealth;
+	[SerializeField] float CurrentHealth;
 	public bool Dead{get; private set;}
 	[SerializeField] bool _inPain;
 	[SerializeField] float _inPainTimer;
 
+	public virtual void Start()
+	{
+		CurrentHealth = MaxHealth;
+		//Debug.Log($"{CurrentHealth}");
+	}
+
 	void Update()
 	{
-		if(_inPain)
-		{
-			_inPainTimer = 1f;
-		}
-		else if(_inPainTimer >= 0f)
-		{
-			_inPainTimer -= Time.deltaTime *4f;
-		}
+		DamageIndicatorUpdate();
 	}
 
 	public void DamageBurst(float _damageAmount, Vector3 _forceDirection) //IDamageable interface
 	{
 		CurrentHealth -= _damageAmount;
-		Debug.Log($"{CurrentHealth}");
+		ApplyForce(_forceDirection);
+
+		//Debug.Log($"{CurrentHealth}");
 		_inPainTimer = 1f;
 		
 		if (CurrentHealth <= 0f)
@@ -43,11 +43,27 @@ public class CreatureBase : MonoBehaviour, IDamageable<float, Vector3, float>
 	{
 		//Placeholder
 	} */
-	public void Die()
+
+	public virtual void ApplyForce(Vector3 _forceDirection)
+	{
+		//Defined by override
+	}
+	public virtual void Die()
 	{
 		Dead = true;
 	}
 
+	void DamageIndicatorUpdate()
+	{
+		if(_inPain)
+		{
+			_inPainTimer = 1f;
+		}
+		else if(_inPainTimer >= 0f)
+		{
+			_inPainTimer = Mathf.MoveTowards(_inPainTimer, 0f, Time.deltaTime *4f);
+		}
+	}
 	private void OnDrawGizmos()
 	{
 		//Gizmos.DrawIcon(transform.position + transform.up, "impact.png", false);

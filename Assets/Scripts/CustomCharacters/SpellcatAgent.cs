@@ -47,7 +47,7 @@ namespace EasyCharacterMovement
 		#endregion
 
 		#region CUSTOM PROPERTIES
-		public bool animFiring{get; private set;}
+		public bool AnimFiring{get; private set;}
 		//public Vector3 aimPoint{get; private set;}
 
 		#endregion
@@ -574,7 +574,7 @@ namespace EasyCharacterMovement
 		protected virtual void Interact(bool isInteracting) //When mouse interact is pressed
 		{
 			magicRay.ShootSpell(isInteracting); //Interact could be many things but for now it's just spellcasting
-			animFiring = isInteracting;
+			AnimFiring = isInteracting;
 			if(isInteracting)
 			{
 				//aimPoint.position;
