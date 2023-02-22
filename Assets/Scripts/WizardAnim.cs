@@ -45,6 +45,6 @@ public class WizardAnim : MonoBehaviour
 
 	public void SwapCameraEvent()
 	{
-		camera2.SetActive(true);
+		//camera2.SetActive(true);
 	}
 }

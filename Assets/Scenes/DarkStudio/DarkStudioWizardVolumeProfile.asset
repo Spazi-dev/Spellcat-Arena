@@ -15,10 +15,10 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {r: 0.67829806, g: 0.7117419, b: 0.77254903, a: 1}
+    m_Value: {r: 0.55428976, g: 0.59594166, b: 0.6792453, a: 1}
   highlights:
     m_OverrideState: 1
-    m_Value: {r: 0.5803922, g: 0.48578826, b: 0.48578826, a: 1}
+    m_Value: {r: 1, g: 0.8443396, b: 0.8443396, a: 1}
   balance:
     m_OverrideState: 0
     m_Value: 0
@@ -220,6 +220,40 @@ MonoBehaviour:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
+--- !u!114 &-192479066275397965
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558a8e2b6826cf840aae193990ba9f2e, type: 3}
+  m_Name: ShadowsMidtonesHighlights
+  m_EditorClassIdentifier: 
+  active: 1
+  shadows:
+    m_OverrideState: 0
+    m_Value: {x: 1, y: 1, z: 1, w: 0.11505274}
+  midtones:
+    m_OverrideState: 0
+    m_Value: {x: 1, y: 1, z: 1, w: 0.1342282}
+  highlights:
+    m_OverrideState: 0
+    m_Value: {x: 1, y: 1, z: 1, w: -0.22051777}
+  shadowsStart:
+    m_OverrideState: 0
+    m_Value: 0
+  shadowsEnd:
+    m_OverrideState: 0
+    m_Value: 0.3
+  highlightsStart:
+    m_OverrideState: 0
+    m_Value: 0.55
+  highlightsEnd:
+    m_OverrideState: 0
+    m_Value: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,6 +272,7 @@ MonoBehaviour:
   - {fileID: 7165044060801609293}
   - {fileID: -3452893971447700982}
   - {fileID: -7692196842671626196}
+  - {fileID: -192479066275397965}
 --- !u!114 &1191878863347457849
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -310,7 +345,7 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 1.79
+    m_Value: 2.73
   contrast:
     m_OverrideState: 0
     m_Value: 0
@@ -322,4 +357,4 @@ MonoBehaviour:
     m_Value: 0
   saturation:
     m_OverrideState: 1
-    m_Value: 12
+    m_Value: 37
