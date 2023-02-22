@@ -83,7 +83,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AddIntensity: 30
+    - _AddIntensity: 20
     - _AlphaClip: 0
     - _Blend: 0
     - _BlendOp: 0
