@@ -26,8 +26,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   saturation:
-    m_OverrideState: 0
-    m_Value: -16
+    m_OverrideState: 1
+    m_Value: 0
 --- !u!114 &-3101987032831423953
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -56,7 +56,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70afe9e12c7a7ed47911bb608a23a8ff, type: 3}
   m_Name: SplitToning
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   shadows:
     m_OverrideState: 1
     m_Value: {r: 0.6519277, g: 0.69383734, b: 0.773, a: 1}
@@ -101,11 +101,11 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0.9
   intensity:
-    m_OverrideState: 0
-    m_Value: 1
+    m_OverrideState: 1
+    m_Value: 0.27
   scatter:
-    m_OverrideState: 0
-    m_Value: 0.575
+    m_OverrideState: 1
+    m_Value: 0.581
   clamp:
     m_OverrideState: 0
     m_Value: 65472
@@ -116,8 +116,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   skipIterations:
-    m_OverrideState: 0
-    m_Value: 1
+    m_OverrideState: 1
+    m_Value: 4
   dirtTexture:
     m_OverrideState: 0
     m_Value: {fileID: 0}
