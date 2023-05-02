@@ -5,14 +5,14 @@ using UnityEngine;
 public class GlobalShaderCameraControl : MonoBehaviour
 {
 	[SerializeField] Transform wallFadeTarget;
-	void Start()
+	/* void Start()
 	{
 		
-	}
+	} */
 
 	// Update is called once per frame
 	void Update()
 	{
-		
+		Shader.SetGlobalVector("_WallFadePosition", wallFadeTarget.position);
 	}
 }
